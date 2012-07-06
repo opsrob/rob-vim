@@ -35,7 +35,6 @@ Bundle 'nelstrom/vim-visual-star-search'
 " File managers
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
-"-------------------------
 
 "-------------------------
 " Text format
@@ -52,13 +51,16 @@ set listchars=tab:▸\ ,trail:·,precedes:<,extends:…
 "-------------------------
 set title
 set ttyfast
-set scrolloff=3		"number of lines to show around curser
+set scrolloff=3		" number of lines to show around curser
+set ruler
 
 "-------------------------
 " autcomd
 "-------------------------
+
+if has ("autocmd")	" Only do if compiled with autocmd support
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-
+endif " has autocmd
