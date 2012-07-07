@@ -1,0 +1,21 @@
+.vimrc config files for MacOS X and Linux.
+
+
+To use:
+
+  $ git clone git://github.com/opsrob/vmrc.git ~/
+
+Run install.sh to copy .vimrc and .gvimrc, this makes no effort
+to be sane or backup files.
+  $ ~/install.sh
+
+Make the .vim/bundle directory:
+  $ mkdir ~/.vim/bundle
+
+Setup Vundle:
+  $ git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+Install configured bundles:
+
+  $ vim +BundleInstall +qall
+
