@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 "-------------------------
-" Bundles
+" bundles
 "-------------------------
 " let Vundle manage Vundle, required!
 " :BundleList          - list configured bundles
@@ -18,41 +18,51 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-" Syntax, color
+" syntax, color
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'elzr/vim-json'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-git'
 Bundle 'altercation/vim-colors-solarized'
 
-" Git
+" git
 Bundle 'tpope/vim-fugitive'
 
-" Editing
+" editing
 Bundle 'tpope/vim-surround'
 Bundle 'nelstrom/vim-visual-star-search'
 
-" File managers
+" file managers
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 
 "-------------------------
-" Text format
+" text format
 "-------------------------
 
 filetype plugin indent on
 syntax on
-set background=dark
 set number
-set listchars=tab:▸\ ,trail:·,precedes:<,extends:…
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
+set autoindent
+set expandtab		" use spaces instead of tabs
+
 
 "-------------------------
-" Terminal options
+" terminal options
 "-------------------------
 set title
 set ttyfast
 set scrolloff=3		" number of lines to show around curser
-set ruler
+set ruler		" show curser position
+set background=dark
+set hidden		" hide buffers instead of closing
+set hlsearch		" highlight search results
+set noswapfile		" use version control!
+set nobackup		" use version control!
+set vb			" don't beep
 
 "-------------------------
 " autcomd
