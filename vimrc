@@ -46,8 +46,8 @@ set number
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
-set autoindent
-set expandtab		" use spaces instead of tabs
+set autoindent    " continue indent on next line
+set expandtab		  " use spaces instead of tabs
 
 
 "-------------------------
@@ -56,13 +56,26 @@ set expandtab		" use spaces instead of tabs
 set title
 set ttyfast
 set scrolloff=3		" number of lines to show around curser
-set ruler		" show curser position
+set ruler	      	" show curser position
 set background=dark
-set hidden		" hide buffers instead of closing
-set hlsearch		" highlight search results
-set noswapfile		" use version control!
-set nobackup		" use version control!
-set vb			" don't beep
+set hidden	  	  " hide buffers instead of closing
+set hlsearch	  	" highlight search results
+set ignorecase    " ignore case when searching
+set noswapfile  	" use version control!
+set nobackup		  " use version control!
+set vb	    	  	" don't beep
+set laststatus=2
+set statusline=
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%f\                          " filename
+set statusline+=%h%m%r%w                     " status flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+set statusline+=\ %{fugitive#statusline()}   " fugitive
+set statusline+=%=                           " right align remainder
+set statusline+=0x%-8B                       " character value
+set statusline+=%-14(%l,%c%V%)               " line, character
+set statusline+=%<%P                         " file position
+
 
 "-------------------------
 " autcomd
